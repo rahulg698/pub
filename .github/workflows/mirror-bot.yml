@@ -9,8 +9,8 @@ defaults:
 
 env:
   # Change these values if you have forked it for your own works
-  GitHubMail: "example@gmail.com"
-  GitHubName: "TheFlashSpeedster" 
+  GitHubMail: "rahulg69@protonmail.com"
+  GitHubName: "rahulg698" 
   Branch: "master"
 
 jobs:
@@ -53,7 +53,7 @@ jobs:
           docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t mirror-bot
           docker image ls
       - name: running Docker
-        timeout-minutes: 325
+        timeout-minutes: 200
         continue-on-error: true
         run: |
-          docker run --env CONFIG_FILE_URL=${{ secrets.CONFIG_FILE_URL }} mirror-bot
+          docker run  mirror-bot
